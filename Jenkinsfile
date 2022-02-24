@@ -1,7 +1,7 @@
 pipeline {
-    agent any 
+    agent {label "docker-build-node" }
     environment {
-    DOCKERHUB_CREDENTIALS = credentials('valaxy-dockerhub')
+    DOCKERHUB_CREDENTIALS = credentials('docker-hub-login')
     }
     stages { 
         stage('SCM Checkout') {
